@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:camera_app/show_image.dart';
 import 'package:flutter/material.dart';
 
 class ImageDisplayScreen extends StatefulWidget {
@@ -24,6 +25,9 @@ class _ImageDisplayScreenState extends State<ImageDisplayScreen> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+              ShowPictureScreen( imagePaths: widget.imagePaths, index: index,)));
               // Handle image tap
             },
             child: Image.file(
